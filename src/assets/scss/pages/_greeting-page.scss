@@ -1,0 +1,60 @@
+@use "../abstracts" as *;
+
+/*===================== GREETING PAGE =====================*/
+.greeting-page {
+   min-height: 100vh;
+   .container {
+      @include flex(center, space-between, 0.8rem);
+      padding-block: 2rem 2rem;
+      .content {
+         width: 80%;
+         .greeting-msg {
+            font-size: var(--biggest-font-size);
+            font-weight: bold;
+            color: $title-color;
+         }
+         .website-info {
+            font-size: var(--h3-font-size);
+            text-indent: 1.5rem;
+            line-height: 1.5;
+            width: 90%;
+            margin-block: 1.3rem 4rem;
+         }
+         .auth-btn {
+            @include flex(center, flex-start, 1rem);
+            p {
+               font-weight: bold;
+               background-color: #fff;
+               border-radius: 50%;
+               width: 33px;
+               height: 33px;
+               @include flex(center, center);
+            }
+         }
+      }
+   }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* SMALL */
+@media (max-width: 768px) {
+   .greeting-page .container {
+      flex-direction: column-reverse;
+   }
+   .greeting-page .container .content {
+      margin-top: 2rem;
+   }
+   .greeting-page .container .content .greeting-msg,
+   .greeting-page .container .content .website-info {
+      text-align: center;
+      padding-left: 0;
+      width: 100%;
+   }
+   .greeting-page .container .content .auth-btn {
+      justify-content: center;
+   }
+}
+/* EXTRA SMALL */
+// @media (max-width: 576px) {
+
+// }

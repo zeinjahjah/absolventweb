@@ -1,0 +1,58 @@
+@use "../abstracts" as *;
+
+/*=============== LOGO COMPONENT ===============*/
+.site-logo {
+   padding-top: 1rem;
+   @media (max-width: 768px) {
+      padding-top: 0;
+   }
+   .logo-text {
+      background-image: linear-gradient(
+         90.22deg,
+         $main-color 27.58%,
+         #000000 63.99%
+      );
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      font: {
+         size: var(--biggest-font-size);
+         weight: bold;
+         family: $logo-font;
+      }
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+      animation: logo-text-animation-fir 0.75s ease forwards;
+      &:hover {
+         animation: logo-text-animation-sec 0.5s ease-in forwards;
+      }
+   }
+}
+
+/*=============== ANIMATION ===============*/
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes logo-text-animation-fir {
+   0% {
+      background-size: 650%;
+   }
+   40% {
+      background-size: 650%;
+   }
+   100% {
+      background-size: 100%;
+   }
+}
+/* Animation shown when hovering over the text. */
+@keyframes logo-text-animation-sec {
+   0% {
+      background-size: 100%;
+   }
+   80% {
+      background-size: 650%;
+   }
+   100% {
+      background-size: 650%;
+   }
+}

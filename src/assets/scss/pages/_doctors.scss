@@ -1,0 +1,80 @@
+@use "../abstracts" as *;
+
+/*===================== DOCTORS PAGE =====================*/
+.doctors-page {
+   min-height: 100vh;
+   .container {
+      @include flex(center, space-between, 0.5rem);
+      flex-wrap: wrap;
+      .content:first-of-type {
+         width: 48%;
+      }
+      .university-logo {
+         width: 48%;
+      }
+      .content:last-of-type {
+         width: 100%;
+         @include flex(flex-start, space-between, 1rem);
+         flex-wrap: wrap;
+         .box {
+            margin-bottom: 1.5rem;
+            flex: 1;
+            .title {
+               font-size: var(--h2-font-size);
+               font-weight: normal;
+               margin-bottom: 1rem;
+            }
+            .table {
+               th:first-of-type,
+               td:first-of-type {
+                  width: 10px;
+               }
+               th:last-of-type,
+               td:last-of-type {
+                  width: 150px;
+               }
+               th,
+               td {
+                  text-align: center;
+               }
+            }
+         }
+      }
+   }
+   //  Change This If You Want To Change Pagination Styling In This Page
+   // .pagination {
+   //    .pagin {
+   //       background-color: #ddd;
+   //       color: #000;
+   //       &.selected-pagin {
+   //          background-color: #007bff;
+   //          color: #fff;
+   //       }
+   //    }
+   // }
+}
+/*=============== BREAKPOINTS ===============*/
+/* MEDIUM */
+@media (max-width: 992px) {
+   .doctors-page .container .content .cover .table {
+      min-width: initial;
+   }
+}
+/* SMALL */
+@media (max-width: 768px) {
+   .doctors-page .container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+   }
+   .doctors-page .container .content {
+      width: 100%;
+      margin-top: 1.5rem;
+   }
+   .doctors-page .container .university-logo {
+      order: -1;
+      align-self: center;
+      width: auto;
+      margin-bottom: 2rem;
+   }
+}

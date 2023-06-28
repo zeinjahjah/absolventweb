@@ -1,0 +1,90 @@
+@use "../abstracts" as *;
+
+/*===================== TASK PAGE =====================*/
+.task-page {
+   min-height: 100vh;
+   .container {
+      @include flex(center, space-between, 1.5rem);
+      .content {
+         width: 60%;
+         .title {
+            @include flex(center, flex-start, 1rem);
+            font-size: var(--h2-font-size);
+            margin-bottom: 1.5rem;
+            &::before {
+               content: "";
+               display: block;
+               width: 17px;
+               height: 17px;
+               border: 1px solid #000;
+               border-radius: 50%;
+               background-color: #b4ebd7;
+            }
+         }
+         .box {
+            background-color: #fff;
+            padding: 1rem 1.2rem;
+            border-radius: 1rem;
+            .task-title {
+               text-align: center;
+               letter-spacing: 1px;
+               font-weight: normal;
+            }
+            .task-content {
+               margin-block: 1rem 0.5rem;
+               text-indent: 25px;
+            }
+            .task-deadlin {
+               @include flex(center, flex-start, 1rem);
+            }
+            .edite-btn-space {
+               @include flex(center, center);
+               height: 50px;
+               margin-top: 1rem;
+               .save-btn {
+                  padding: 0.5rem 1rem;
+                  font-size: 1rem;
+               }
+            }
+            .attatchment-download {
+               @include flex(center, center);
+               .btn {
+                  @include flex(center, center, 0.5rem);
+                  margin-top: 1rem;
+                  border-radius: 2rem;
+                  font-weight: bold;
+                  background-color: #ddd;
+                  transition: color 0.4s, background-color 0.4s;
+                  &:hover {
+                     color: #fff;
+                     background-color: #007bff;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/* CUSTOM SIZE */
+@media (max-width: 700px) {
+   .task-page .container {
+      flex-direction: column-reverse;
+   }
+   .task-page .container .content {
+      width: 100%;
+   }
+}
+/* EXTRA SMALL */
+// @media (max-width: 576px) {
+//    .event-page .container .content .box .item {
+//       flex-direction: column;
+//    }
+//    .event-page .container .content .box .item .item_title {
+//       align-self: flex-start;
+//    }
+//    .event-page .container .content .box .item .input-field,
+//    .event-page .container .content .box .item .textarea {
+//       width: 100%;
+//    }
+// }

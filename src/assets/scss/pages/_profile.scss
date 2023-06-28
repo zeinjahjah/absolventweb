@@ -1,0 +1,87 @@
+@use "../abstracts" as *;
+
+/*===================== PROFILE PAGE =====================*/
+.profile-student {
+   min-height: 100vh;
+}
+.profile-page {
+   .user-info {
+      .container {
+         @include flex(center, flex-start, 10rem);
+         .detils {
+            margin-right: 1rem;
+            background-color: #d9d9d9;
+            background-image: url(../imgs/box-bg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 1rem 1.7rem;
+            border-radius: 2rem;
+            overflow: hidden;
+            .item {
+               @include flex(center, flex-start, 1rem);
+               padding-bottom: 0.8rem;
+               .title {
+                  font-size: var(--h3-font-size);
+                  font-weight: normal;
+                  width: 180px;
+               }
+               .text {
+                  font-size: var(--normal-font-size);
+                  color: #000;
+                  background-color: #b4ebd7;
+                  width: 235px;
+                  padding: 0.5rem;
+                  border-radius: 0.5rem;
+               }
+            }
+         }
+      }
+   }
+   .topics {
+      margin-top: 3rem;
+      .container {
+         .cover {
+            margin-top: 1rem;
+            .table {
+               th:first-of-type,
+               td:first-of-type {
+                  width: 10px;
+                  text-align: center;
+               }
+               th:last-of-type {
+                  width: 200px;
+               }
+            }
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/* MEDIUM */
+@media (max-width: 992px) {
+   .profile-page .user-info .container {
+      flex-direction: column-reverse;
+      gap: 0.5rem;
+   }
+   .profile-page .user-info .container .detils {
+      margin-top: 2rem;
+      margin-right: 0;
+   }
+}
+/* EXTRA SMALL */
+@media (max-width: 510px) {
+   .profile-page .user-info .container .detils {
+      width: 100%;
+   }
+   .profile-page .user-info .container .detils .item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+   }
+   .profile-page .user-info .container .detils .item .title {
+      text-align: left;
+   }
+   .profile-page .user-info .container .detils .item .text {
+      width: 100%;
+   }
+}

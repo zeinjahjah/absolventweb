@@ -1,0 +1,88 @@
+@use "../abstracts" as *;
+
+/*===================== WORKSPACE PAGE =====================*/
+.workspace-page {
+   min-height: 100vh;
+   .container {
+      @include flex(center, space-between, 2rem);
+      flex-wrap: wrap;
+      .workspace-end {
+         width: 100%;
+         @include flex(center, flex-end, 1rem);
+      }
+      .content {
+         width: 70%;
+         .workspace-info {
+            .item {
+               @include flex(center, flex-start, 1rem);
+               margin-bottom: 1rem;
+               &::before {
+                  content: "";
+                  display: block;
+                  width: 10px;
+                  height: 10px;
+                  border: 1px solid #000;
+                  border-radius: 50%;
+                  background-color: #b4ebd7;
+               }
+            }
+         }
+         .workspace-btns {
+            margin-block: 2rem;
+            @include flex(center, flex-start, 0.5rem);
+         }
+         table {
+            td:first-of-type {
+               text-align: center;
+            }
+            td:last-of-type {
+               text-align: center;
+            }
+         }
+      }
+      .university-logo {
+         width: 25%;
+      }
+      &.empty-workspace {
+         flex-direction: column-reverse;
+         .text {
+            text-align: center;
+            line-height: 1.5;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            &_href {
+               font-weight: bold;
+               text-decoration: underline;
+               &:hover {
+                  color: green;
+               }
+            }
+         }
+         .university-logo {
+            width: 100%;
+            @include flex(center, center);
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/* MEDIUM */
+@media (max-width: 992px) {
+   .workspace-page .container {
+      flex-direction: column-reverse;
+      justify-content: center;
+      gap: 0;
+   }
+   .workspace-page .container .workspace-end {
+      order: 3;
+      margin-bottom: 2rem;
+   }
+   .workspace-page .container .content {
+      width: 100%;
+      margin-top: 2rem;
+   }
+   .workspace-page .container .university-logo {
+      width: 100%;
+      @include flex(center, center);
+   }
+}

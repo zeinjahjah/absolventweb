@@ -1,0 +1,53 @@
+@use "./mixins" as *;
+
+// ===================== COLORS =====================
+$body-color: #eaeaea;
+$main-color: #0081aa;
+$danger-color: #fc4855;
+$title-color: #085f7b;
+// $text-color: #8a8f93;
+// $primary-color: #27ca7d;
+// $secondary-color: #d4eee2;
+// $third-color: #f4eaea;
+// $btn-color-fri: #d4eee2;
+// $btn-color-sec: #f59758;
+// ===================== FONTS =====================
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap");
+// ===================== FONTS FAMILY =====================
+$body-font: "Poppins", sans-serif;
+$logo-font: "Michroma", sans-serif;
+$links-font: "Playfair Display", serif;
+
+/*=============== VARIABLES ===============*/
+:root {
+   --biggest-font-size: 1.6rem;
+   --links-font-size: 1.18rem;
+   --h2-font-size: 1.25rem;
+   --h3-font-size: 1.125rem;
+   --normal-font-size: 0.938rem;
+   --header-height: 143px;
+   @media (max-width: 992px) {
+      --biggest-font-size: 1.4rem;
+      --h3-font-size: 1rem;
+   }
+   @media (max-width: 768px) {
+      --header-height: 90px;
+   }
+   @media (max-width: 576px) {
+      --h2-font-size: 1.1rem;
+      --h3-font-size: 0.95rem;
+   }
+}
+// ===================== FONT WEIGHT =====================
+$font-semi-bold: 500;
+$font-bold: 600;
+
+// ===================== GLOBAL =====================
+
+// ===================== Z INDEX =====================
+$z-normal: 1;
+$z-tooltip: 10;
+$z-fixed: 100;

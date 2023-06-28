@@ -1,0 +1,121 @@
+@use "../abstracts" as *;
+
+/*=============== BUTTONS COMPONENT ===============*/
+.btn {
+   position: relative;
+   border-radius: 0.4rem;
+   color: #000;
+   font-size: 1rem;
+   padding: 0.6rem 1.5rem;
+}
+/* Greeting page buttons */
+.login-btn {
+   @include customBtn(#28a745, #28a745, 120px);
+}
+.register-btn {
+   @include customBtn(#007bff, #007bff, 120px);
+}
+.logout-btn {
+   @include customBtn($danger-color, $danger-color);
+}
+/* Auth pages buttons */
+.auth-page-btn {
+   color: #fff;
+   background-image: linear-gradient(
+      91.18deg,
+      #2575be 0%,
+      rgba(78, 182, 227, 0.85) 99.99%,
+      rgba(20, 124, 183, 0.89) 100%
+   );
+   border: 1px solid #000000;
+   box-shadow: 0px 10px 4px rgba(104, 193, 231, 0.3);
+   width: 100%;
+   margin-block: 2rem 1.5rem;
+   display: block;
+   &:hover {
+      background: linear-gradient(to right, #003959 0%, #003959 100%);
+   }
+}
+
+/* Process Buttons */
+.add-btn,
+.post-btn,
+.meeting-btn {
+   @include customBtn(#007bff, #007bff);
+}
+.edite-btn,
+.task-btn {
+   @include customBtn(#28a745, #28a745);
+}
+.delete-btn {
+   @include customBtn(#f00, #f00);
+}
+.save-btn {
+   background-color: #007bff;
+   color: #fff;
+   transition: transform 0.2s;
+   &:hover {
+      transform: scale(1.1);
+      border: 2px solid #000;
+   }
+}
+.show-btn {
+   background-color: #28a745;
+   color: #fff;
+   transition: background-color 0.2s;
+   &:hover {
+      background-color: #28a745b0;
+   }
+}
+/* Scroll Top Button */
+.scroll-top {
+   position: fixed;
+   bottom: 2rem;
+   right: 3rem;
+   border-radius: 50%;
+   width: 55px;
+   height: 55px;
+   @include flex(center, center);
+   background-color: #007bffa0;
+   transition: background-color 0.3s;
+   &:hover {
+      background-color: #007bff;
+   }
+}
+/* Page Not Found button */
+.retrun-btn {
+   background-color: #007bff;
+   color: #fff;
+   border-radius: 2rem;
+   transition: background-color 0.2s;
+   &:hover {
+      background-color: #007bffdd;
+   }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* MEDIUM */
+@media (max-width: 992px) {
+   .logout-btn {
+      width: 90px;
+      .btn-icon {
+         width: 20px;
+         height: 20px;
+         right: -0.2rem;
+      }
+   }
+}
+/* SMALL */
+@media (max-width: 768px) {
+   .logout-btn {
+      margin-block: 0.8rem;
+      .btn-icon {
+         width: 20px;
+         height: 20px;
+         right: -0.2rem;
+      }
+   }
+   .login-page-btn {
+      width: 100%;
+   }
+}

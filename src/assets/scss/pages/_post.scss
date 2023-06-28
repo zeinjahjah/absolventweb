@@ -1,0 +1,247 @@
+@use "../abstracts" as *;
+
+/*===================== POST PAGE =====================*/
+.post-page {
+   min-height: 100vh;
+   .container {
+      .content {
+         width: 100%;
+         > .title {
+            @include flex(center, flex-start, 1rem);
+            font-size: var(--h2-font-size);
+            margin-bottom: 1.5rem;
+            &::before {
+               content: "";
+               display: block;
+               width: 17px;
+               height: 17px;
+               border: 1px solid #000;
+               border-radius: 50%;
+               background-color: #b4ebd7;
+            }
+         }
+         .box {
+            background-color: #fff;
+            padding: 1rem 1.7rem;
+            border-radius: 1rem 1rem 0 0;
+            .info {
+               border-bottom: 1px solid #000;
+               .post-header {
+                  @include flex(center, space-between);
+                  margin-bottom: 1rem;
+                  .title {
+                     @include flex(center, flex-start, 0.5rem);
+                     .username {
+                        font-weight: bold;
+                     }
+                     .btn-icon {
+                        width: 35px;
+                        height: 35px;
+                     }
+                  }
+                  .points {
+                     cursor: pointer;
+                     .point {
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background-color: #000;
+                        margin: 0.2rem;
+                     }
+                     .nested-list {
+                        position: relative;
+                        .options {
+                           transform: scale(0);
+                           transform-origin: top right;
+                           border-radius: 0.9rem 0 0.9rem 0.9rem;
+                           overflow: hidden;
+                           position: absolute;
+                           top: 100%;
+                           right: 2px;
+                           transition: transform 0.4s;
+                           cursor: pointer;
+                           z-index: $z-tooltip;
+                           .option {
+                              background-color: #ddd;
+                              padding: 0.8rem 1.5rem;
+                              transition: background-color 0.4s;
+                              &:hover {
+                                 background-color: #eee;
+                              }
+                              &:first-of-type {
+                                 border-bottom: 1px solid #000;
+                              }
+                           }
+                           &.show {
+                              transform: scale(1);
+                           }
+                        }
+                     }
+                     &.hide-points {
+                        display: none;
+                     }
+                  }
+               }
+               .post-info {
+                  @include flex(center, space-between, 1rem);
+                  margin-bottom: 0.5rem;
+                  > .topic-name {
+                     font-weight: normal;
+                  }
+               }
+            }
+            > .text {
+               padding-block: 1.2rem;
+               border-bottom: 1px solid #000;
+               > p {
+                  line-height: 1.5;
+               }
+               .post-deadlin {
+                  @include flex(center, flex, 1rem);
+                  margin-top: 0.5rem;
+               }
+            }
+            .attatchment-download {
+               @include flex(center, center);
+               .btn {
+                  @include flex(center, center, 0.5rem);
+                  margin-top: 1rem;
+                  border-radius: 2rem;
+                  font-weight: bold;
+                  background-color: #ddd;
+                  transition: color 0.4s, background-color 0.4s;
+                  &:hover {
+                     color: #fff;
+                     background-color: #007bff;
+                  }
+               }
+            }
+         }
+         .comments {
+            margin-top: 0.5rem;
+            .add-comment {
+               background-color: #fff;
+               padding-top: 1rem;
+               border-radius: 0.2rem;
+               position: relative;
+               @include flex(flex-start, flex-start, 1rem);
+               .input-field {
+                  padding: 0.5rem 1rem;
+                  border: 1px solid #000;
+                  border-radius: 0.9rem;
+                  flex: 1;
+                  height: 32px;
+                  resize: none;
+                  max-height: 150px;
+                  overflow-y: scroll;
+                  &::-webkit-scrollbar {
+                     width: 7px;
+                  }
+               }
+               .btn-icon {
+                  width: 25px;
+                  height: 25px;
+               }
+               .send {
+                  background-color: transparent;
+               }
+            }
+         }
+      }
+      .comments-list {
+         background-color: #ddd;
+         padding: 1rem 1.7rem;
+         border-radius: 0 0 1rem 1rem;
+         > .title {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #000;
+            font-weight: normal;
+         }
+         .comment {
+            margin-block: 1rem;
+            .author-name {
+               display: grid;
+               grid-template-columns: 30px auto auto 1fr;
+               align-items: center;
+               gap: 0.5rem;
+               font-size: 1rem;
+               width: 100%;
+               .btn-icon {
+                  width: 30px;
+                  height: 30px;
+               }
+               .comment-btns {
+                  justify-self: flex-end;
+                  position: relative;
+                  .points {
+                     cursor: pointer;
+                     .point {
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background-color: #000;
+                        margin: 0.2rem;
+                     }
+                     &.hide-points {
+                        display: none;
+                     }
+                  }
+                  .options {
+                     transform: scale(0);
+                     transform-origin: top right;
+                     border-radius: 0.9rem 0 0.9rem 0.9rem;
+                     overflow: hidden;
+                     position: absolute;
+                     top: 100%;
+                     right: 2px;
+                     transition: transform 0.4s;
+                     cursor: pointer;
+                     z-index: $z-tooltip;
+                     .option {
+                        background-color: #fff;
+                        padding: 0.8rem 1.5rem;
+                        transition: background-color 0.4s;
+                        &:hover {
+                           background-color: #eee;
+                        }
+                        &:first-of-type {
+                           border-bottom: 1px solid #000;
+                        }
+                     }
+                     &.show {
+                        transform: scale(1);
+                     }
+                  }
+               }
+            }
+            .comment-edition {
+               padding: 0.5rem;
+               color: #2c2cff;
+               font-weight: bold;
+               cursor: pointer;
+            }
+            .text {
+               margin-block: 0.5rem;
+               padding-left: 2rem;
+               line-height: 1.5;
+               font-size: 1rem;
+            }
+            .input-field {
+               margin-block: 0.5rem;
+               padding: 0.5rem 1rem;
+               border-radius: 1rem;
+               width: 100%;
+               resize: none;
+               max-height: 150px;
+               overflow-y: scroll;
+               &::-webkit-scrollbar {
+                  width: 7px;
+               }
+            }
+            .the-date {
+               display: block;
+            }
+         }
+      }
+   }
+}

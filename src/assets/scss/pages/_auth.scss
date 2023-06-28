@@ -1,0 +1,135 @@
+@use "../abstracts" as *;
+
+/*===================== LOGIN PAGE =====================*/
+.auth {
+   @include flex(center, center);
+   .container {
+      @include flex(center, center);
+      padding-block: 2rem;
+      .content {
+         @include flex(initial, space-between);
+         background-color: #fff;
+         border-radius: 0.4rem;
+         width: 100%;
+         .form {
+            width: 50%;
+            padding: 1rem 2rem;
+            .form-element {
+               margin-top: 3rem;
+               label {
+                  display: block;
+                  margin-bottom: 0.4rem;
+                  padding-left: 1rem;
+                  font-weight: bold;
+                  font-size: var(--h2-font-size);
+                  &[for="remember-me"] {
+                     display: inline;
+                     font-size: var(--h3-font-size);
+                     font-weight: normal;
+                     color: #149be7fc;
+                     margin-bottom: 0;
+                  }
+               }
+               .form-group {
+                  margin-top: 1rem;
+                  position: relative;
+                  .custom-select {
+                     @include custom-select;
+                  }
+                  .form-input {
+                     background-color: #cecece;
+                     width: 100%;
+                     height: 48px;
+                     padding-left: 1.5rem;
+                     padding-block: 0.7rem;
+                     border-radius: 3rem;
+                     border: 1px solid #000;
+                     font-size: var(--h3-font-size);
+                     &[type="checkbox"] {
+                        height: 17px;
+                        width: 17px;
+                     }
+                  }
+                  ::placeholder {
+                     font-size: var(--h3-font-size);
+                  }
+                  .img-input {
+                     position: absolute;
+                     bottom: 0;
+                     left: -0.5rem;
+                     height: 48px;
+                     width: 48px;
+                     border: 1px solid #000;
+                     border-radius: 50%;
+                     background-color: #fff;
+                     @include flex(center, center);
+                     & + .form-input {
+                        padding-left: 4rem;
+                     }
+                  }
+                  &[type="checkbox"] {
+                     @include flex(center, flex-start);
+                  }
+                  &:last-of-type {
+                     margin-block: 1.5rem;
+                  }
+               }
+               .note {
+                  text-align: center;
+                  padding-top: 1rem;
+                  margin-top: 1.5rem;
+                  border-top: 1px solid #aaa;
+                  .link {
+                     color: #2575be;
+                     font-weight: bold;
+                  }
+               }
+            }
+         }
+         .university-logo {
+            width: 50%;
+            min-height: 100%;
+            background-image: linear-gradient(
+               180.29deg,
+               rgba(24, 57, 173, 0) 0.25%,
+               rgba(0, 114, 177, 0.47) 23.96%,
+               #003959 45.77%
+            );
+            @include flex(center, center);
+         }
+      }
+   }
+}
+.login-page {
+   min-height: 100vh;
+}
+/*=============== BREAKPOINTS ===============*/
+
+/* SMALL */
+@media (max-width: 768px) {
+   .auth .container .content {
+      flex-direction: column-reverse;
+   }
+   .auth .container .content .form {
+      width: 100%;
+   }
+   .auth .container .content .university-logo {
+      width: 100%;
+      height: 200px;
+   }
+   .auth .container .content .form .form-element .form-group .form-input {
+      width: 100%;
+   }
+}
+/* EXTRA SMALL */
+@media (max-width: 576px) {
+   .auth .container .content .form .form-element .form-group .form-input {
+      height: 45px;
+      width: 100%;
+      padding-block: 0.6rem;
+   }
+   .auth .container .content .form .form-element .form-group .img-input {
+      height: 45px;
+      width: 45px;
+   }
+}

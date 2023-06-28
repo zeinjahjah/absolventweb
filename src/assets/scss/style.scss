@@ -1,0 +1,31 @@
+// Import of partial files
+
+// RULES
+@use "./abstracts";
+@use "./base";
+
+// COMPONENTS
+@use "./components/header";
+@use "./components/logo";
+@use "./components/buttons";
+@use "./components/table";
+@use "./components/search";
+@use "./components/filter";
+@use "./components/pagination";
+@use "./components/spinning";
+
+// PAGES
+@use "./pages/greeting-page";
+@use "./pages/auth";
+@use "./pages/homepage";
+@use "./pages/list-of-topics";
+@use "./pages/profile";
+@use "./pages/support";
+@use "./pages/students";
+@use "./pages/doctors";
+@use "./pages/workspace";
+@use "./pages/topic";
+@use "./pages/event";
+@use "./pages/post";
+@use "./pages/task";
+@use "./pages/page-not-found";

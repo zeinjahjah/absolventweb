@@ -1,0 +1,128 @@
+@use "../abstracts" as *;
+
+/*===================== EVETN PAGE =====================*/
+.event-page {
+   min-height: 100vh;
+   .container {
+      @include flex(center, space-between, 1.5rem);
+      .content {
+         width: 60%;
+         .meta {
+            @include flex(center, space-between);
+         }
+         .title {
+            @include flex(center, flex-start, 1rem);
+            font-size: var(--h2-font-size);
+            margin-bottom: 1.5rem;
+            &::before {
+               content: "";
+               display: block;
+               width: 17px;
+               height: 17px;
+               border: 1px solid #000;
+               border-radius: 50%;
+               background-color: #b4ebd7;
+            }
+         }
+         .box {
+            background-color: #fff;
+            padding: 1rem 1.2rem;
+            border-radius: 1rem;
+            .item {
+               @include flex(center, space-between, 1rem);
+               padding-block: 0.4rem;
+               &_title {
+                  font-size: var(--h3-font-size);
+                  font-weight: normal;
+                  width: 95px;
+               }
+               &:nth-of-type(2) {
+                  .item_title {
+                     align-self: flex-start;
+                  }
+               }
+               .input-field,
+               .textarea {
+                  background-color: #b4ebd7;
+                  padding-block: 0.8rem;
+                  padding-inline: 1rem;
+                  border: 1px solid #000;
+                  border-radius: 1rem;
+                  width: 75%;
+               }
+               .textarea {
+                  resize: none;
+                  height: 100px;
+                  // styling scrollbar later
+                  &::-webkit-scrollbar {
+                     width: 10px;
+                  }
+               }
+               .file-input {
+                  @include flex(center, center, 0.4rem);
+                  font-size: 0.97rem;
+                  background-color: #fff;
+                  padding-block: 0.5rem;
+                  border: 1px solid #000;
+                  border-radius: 1rem;
+                  width: 75%;
+                  cursor: pointer;
+                  .btn-icon {
+                     background-color: #000;
+                     width: 18px;
+                     height: 18px;
+                  }
+                  #file {
+                     display: none;
+                  }
+               }
+            }
+            .attachName {
+               border-radius: 2rem;
+               padding: 0.4rem 0.7rem;
+               border: 1px solid #000;
+               position: relative;
+               font-size: 0.9rem;
+               .btn-icon {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 18px;
+                  height: 18px;
+                  transform: translateY(-50%);
+                  border-radius: 50%;
+                  background-color: red;
+                  cursor: pointer;
+               }
+            }
+            .save-btn-space {
+               @include flex(center, center);
+               height: 50px;
+            }
+         }
+      }
+   }
+}
+/*=============== BREAKPOINTS ===============*/
+/* SMALL */
+@media (max-width: 768px) {
+   .event-page .container {
+      flex-direction: column-reverse;
+   }
+   .event-page .container .content {
+      width: 100%;
+   }
+}
+/* EXTRA SMALL */
+@media (max-width: 576px) {
+   .event-page .container .content .box .item {
+      flex-direction: column;
+   }
+   .event-page .container .content .box .item .item_title {
+      align-self: flex-start;
+   }
+   .event-page .container .content .box .item .input-field,
+   .event-page .container .content .box .item .textarea {
+      width: 100%;
+   }
+}

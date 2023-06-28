@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+/*===================== PAGE NOT FOUND PAGE =====================*/
+.not-found {
+   .container {
+      min-height: 100vh;
+      @include flex(center, center, 1.5rem);
+      flex-direction: column;
+      .error-number {
+         font-size: 5rem;
+         font-weight: bold;
+         letter-spacing: 1rem;
+      }
+      .text {
+         text-align: center;
+         line-height: 1.5;
+         .error-href {
+            color: #00f;
+         }
+      }
+   }
+}
